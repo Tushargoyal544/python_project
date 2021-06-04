@@ -1,0 +1,46 @@
+#claculator
+def add (a,b):
+     sum=a+b
+     return sum
+
+def subtract (a,b):
+    sub=a-b
+    return sub
+
+def multiply (a,b):
+    mul=a*b
+    return mul
+
+def devide (a,b):
+    devide=int(a/b)
+    return devide
+
+operation={
+    "+":add,
+    "-":subtract,
+    "*":multiply,
+    "/":devide
+}
+
+a=int(input("enter your first number"))
+
+# b=int(input("enter your next number"))
+
+should_continue=True
+for symbol in operation:
+    print(symbol)
+
+while should_continue:
+
+    operation_symbol=input("choose the symbol line above")
+    b=int(input("enter your next number"))
+
+    calculation_function=operation[operation_symbol]
+    answer=calculation_function(a,b)
+    print(f"{a} {operation_symbol} {b} = {answer}")
+
+    if input("press y if you wont to continew otherwise press n to exit")=="y":
+        a=answer
+    else:
+        should_continue=False
+
