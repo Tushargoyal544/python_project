@@ -1,0 +1,37 @@
+import random
+
+
+easy_guess=10
+hard_guess=5
+
+def set_defeculty():
+    level=input("choose game leve type 'easy' and 'hard=  ")
+    if level=="easy":
+        return easy_guess
+    else:
+        return hard_guess
+
+
+def comapre_no(computer_gess,user_gess_no):
+    if user_gess_no>computer_gess:
+        print("gess low")
+    elif user_gess_no<computer_gess:
+        print("gess heigh")
+    else:
+        print("you got it")
+
+
+
+turm=set_defeculty()
+
+def game():
+    user_gess_no=0
+    computer_gess=random.randint(1, 101)
+    print(computer_gess)
+    print(f"you have {turm} attemp remaning")
+
+    while user_gess_no!=computer_gess:
+        user_gess_no=int(input("pls gess the number=  "))
+        comapre_no(computer_gess, user_gess_no)
+
+game()
